@@ -1,5 +1,6 @@
 const inquirer = require('inquirer');
 
+//get manager information
 managerPrompt = function() {
     inquirer
         .prompt([
@@ -19,6 +20,8 @@ managerPrompt = function() {
         ])
         .then((answers) => {
             console.log(answers);
+            //create a new manager object with answers
+            //then run function to see if user wants to add more employees
             addEmployee();
         })
         .catch((error) => {
@@ -26,6 +29,7 @@ managerPrompt = function() {
         });
 }
 
+//ask user if they want to add more employees
 addEmployee = function() {
     inquirer
         .prompt({
@@ -37,8 +41,10 @@ addEmployee = function() {
         })
         .then((answer) => {
             if (answer.userChoice === 'Finish Building Team') {
+                //build the HTML file with current employees
                 console.log('Done!')
             } else {
+                //run a function to create an engineer or intern
                 console.log('Adding more!')
             }
         })
