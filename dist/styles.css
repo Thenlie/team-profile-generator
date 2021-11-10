@@ -1,3 +1,12 @@
+main {
+    display: flex;
+}
+
 .card {
     border: 2px solid black;
+    border-radius: 7px;
+    width: 200px;
+    margin: 10px 15px;
+    padding: 10px 15px;
+    text-align: center;
 }
