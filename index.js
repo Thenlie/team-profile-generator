@@ -3,6 +3,7 @@ const Manager = require('./lib/Manager');
 const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern');
 const generatePage = require('./src/page-template');
+const { writeFile } = require('./src/file-transfer');
 
 const employees = [];
 
@@ -141,5 +142,6 @@ managerPrompt()
         return generatePage(employees);
     })
     .then(pageHTML => {
-        console.log(pageHTML);
+        console.log(pageHTML)
+        writeFile(pageHTML);
     })
