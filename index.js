@@ -136,23 +136,6 @@ internPrompt = () => {
         });
 }
 
-mockData = [ {
-    name: 'Sam',
-    id: '1',
-    email: 'adsgkhadsg',
-    officeNumber: '1234'
-  }, {
-    name: 'Sarah',
-    id: '23',
-    email: 'sdggasdgh',
-    school: 'sddg'
-  }, {
-    name: 'dfshjgdfhj',
-    id: '1234',
-    email: 'dsgsdfbh',
-    github: 'sdgswdfg'
-  }]
-
 managerPrompt()
     .then(employees => {
         return generatePage(employees);
