@@ -2,12 +2,13 @@ const inquirer = require('inquirer');
 const Manager = require('./lib/Manager');
 const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern');
+const generatePage = require('./src/page-template');
 
 const employees = [];
 
 //get manager information
-managerPrompt = function() {
-    inquirer
+managerPrompt = () => {
+    return inquirer
         .prompt([
             {
                 type: 'input',
@@ -32,7 +33,7 @@ managerPrompt = function() {
             const manager = new Manager(answers.name, answers.id, answers.email, answers.officeNum);
             employees.push(manager);
             //then run function to see if user wants to add more employees
-            addEmployee();
+            return addEmployee();
         })
         .catch((error) => {
             console.log(error);
@@ -40,8 +41,8 @@ managerPrompt = function() {
 }
 
 //ask user if they want to add more employees
-addEmployee = function() {
-    inquirer
+addEmployee = () => {
+    return inquirer
         .prompt({
                 type: 'list',
                 name: 'userChoice',
@@ -53,13 +54,13 @@ addEmployee = function() {
             if (answer.userChoice === 'Finish Building Team') {
                 //build the HTML file with current employees
                 console.log('Done!');
-                console.log(employees);
+                return employees;
             } else if (answer.userChoice === 'Engineer') {
                 //run a function to create an engineer
-                engineerPrompt();
+                return engineerPrompt();
             } else if (answer.userChoice === 'Intern') {
                 //run a function to create an intern
-                internPrompt();
+                return internPrompt();
             }
         })
         .catch((error) => {
@@ -68,8 +69,8 @@ addEmployee = function() {
 }
 
 //get engineer information
-engineerPrompt = function() {
-    inquirer
+engineerPrompt = () => {
+    return inquirer
         .prompt([
             {
                 type: 'input',
@@ -94,7 +95,7 @@ engineerPrompt = function() {
             const engineer = new Engineer(answers.name, answers.id, answers.email, answers.github); 
             employees.push(engineer);
             //then run function to see if user wants to add more employees
-            addEmployee();
+            return addEmployee();
         })
         .catch((error) => {
             console.log(error);
@@ -102,8 +103,8 @@ engineerPrompt = function() {
 }
 
 //get intern information
-internPrompt = function() {
-    inquirer
+internPrompt = () => {
+    return inquirer
         .prompt([
             {
                 type: 'input',
@@ -128,11 +129,34 @@ internPrompt = function() {
             const intern = new Intern(answers.name, answers.id, answers.email, answers.school);
             employees.push(intern);
             //then run function to see if user wants to add more employees
-            addEmployee();
+            return addEmployee();
         })
         .catch((error) => {
             console.log(error);
         });
 }
 
-managerPrompt();
+mockData = [ {
+    name: 'Sam',
+    id: '1',
+    email: 'adsgkhadsg',
+    officeNumber: '1234'
+  }, {
+    name: 'Sarah',
+    id: '23',
+    email: 'sdggasdgh',
+    school: 'sddg'
+  }, {
+    name: 'dfshjgdfhj',
+    id: '1234',
+    email: 'dsgsdfbh',
+    github: 'sdgswdfg'
+  }]
+
+managerPrompt()
+    .then(employees => {
+        return generatePage(employees);
+    })
+    .then(pageHTML => {
+        console.log(pageHTML);
+    })
