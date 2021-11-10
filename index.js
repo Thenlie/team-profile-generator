@@ -1,7 +1,7 @@
 const inquirer = require('inquirer');
-const Manager = require('./lib/Manager')
-const Engineer = require('./lib/Engineer')
-const Intern = require('./lib/Intern')
+const Manager = require('./lib/Manager');
+const Engineer = require('./lib/Engineer');
+const Intern = require('./lib/Intern');
 
 const employees = [];
 
@@ -29,13 +29,13 @@ managerPrompt = function() {
         ])
         .then((answers) => {
             //create a new manager object with answers and push to employees array
-            const manager = new Manager(answers.name, answers.id, answers.email, answers.officeNum) 
-            employees.push(manager)
+            const manager = new Manager(answers.name, answers.id, answers.email, answers.officeNum);
+            employees.push(manager);
             //then run function to see if user wants to add more employees
             addEmployee();
         })
         .catch((error) => {
-            console.log(error)
+            console.log(error);
         });
 }
 
@@ -52,7 +52,8 @@ addEmployee = function() {
         .then((answer) => {
             if (answer.userChoice === 'Finish Building Team') {
                 //build the HTML file with current employees
-                console.log('Done!')
+                console.log('Done!');
+                console.log(employees);
             } else if (answer.userChoice === 'Engineer') {
                 //run a function to create an engineer
                 engineerPrompt();
@@ -62,7 +63,7 @@ addEmployee = function() {
             }
         })
         .catch((error) => {
-            console.log(error)
+            console.log(error);
         });
 }
 
@@ -90,12 +91,13 @@ engineerPrompt = function() {
         ])
         .then((answers) => {
             //create a new engineer object with answers and push to employees array
-            const engineer = new Engineer(answers.name, answers.id, answers.email, answers.officeNum) 
+            const engineer = new Engineer(answers.name, answers.id, answers.email, answers.github); 
+            employees.push(engineer);
             //then run function to see if user wants to add more employees
             addEmployee();
         })
         .catch((error) => {
-            console.log(error)
+            console.log(error);
         });
 }
 
@@ -117,18 +119,19 @@ internPrompt = function() {
                 message: "Please enter the intern's email address"
             }, {
                 type: 'input',
-                name: 'github',
+                name: 'school',
                 message: "Please enter the intern's school name"
             }
         ])
         .then((answers) => {
             //create a new intern object with answers and push to employees array
-            const intern = new Intern(answers.name, answers.id, answers.email, answers.officeNum) 
+            const intern = new Intern(answers.name, answers.id, answers.email, answers.school);
+            employees.push(intern);
             //then run function to see if user wants to add more employees
             addEmployee();
         })
         .catch((error) => {
-            console.log(error)
+            console.log(error);
         });
 }
 
