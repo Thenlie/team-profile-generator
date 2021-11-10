@@ -1,5 +1,7 @@
+//card for each employee
 generateCard = employee => {
     return `
+    <div class='title'>${employee.constructor.name}</div>
     <div class='name'>${employee.name}</div>
     <div class='id'>${employee.id}</div>
     <div class='email'>${employee.email}</div>
