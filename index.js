@@ -30,6 +30,9 @@ managerPrompt = () => {
                     if (!input) {
                         console.log('Please enter an ID number!');
                         return false;
+                    } else if (isNaN(parseInt(input))) {
+                        console.log(' Please enter a number!')
+                        return false;
                     }
                     return true;
                 }
@@ -38,8 +41,12 @@ managerPrompt = () => {
                 name: 'email',
                 message: "Please enter the team manager's email address (Required)",
                 validate: function(input) {
+                    let re = /\S+@\S+\.\S+/;
                     if (!input) {
                         console.log('Please enter an email address!');
+                        return false;
+                    } else if (!re.test(input)) {
+                        console.log(' Please enter a valid email address!');
                         return false;
                     }
                     return true;
@@ -51,6 +58,9 @@ managerPrompt = () => {
                 validate: function(input) {
                     if (!input) {
                         console.log('Please enter an office number!');
+                        return false;
+                    } else if (isNaN(parseInt(input))) {
+                        console.log(' Please enter a number!')
                         return false;
                     }
                     return true;
@@ -120,6 +130,9 @@ engineerPrompt = () => {
                     if (!input) {
                         console.log('Please enter an ID number!');
                         return false;
+                    } else if (isNaN(parseInt(input))) {
+                        console.log(' Please enter a number!')
+                        return false;
                     }
                     return true;
                 }
@@ -128,8 +141,12 @@ engineerPrompt = () => {
                 name: 'email',
                 message: "Please enter the engineer's email address (Required)",
                 validate: function(input) {
+                    let re = /\S+@\S+\.\S+/;
                     if (!input) {
                         console.log('Please enter an email address!');
+                        return false;
+                    } else if (!re.test(input)) {
+                        console.log(' Please enter a valid email address!');
                         return false;
                     }
                     return true;
@@ -182,6 +199,9 @@ internPrompt = () => {
                     if (!input) {
                         console.log('Please enter an ID number!');
                         return false;
+                    } else if (isNaN(parseInt(input))) {
+                        console.log(' Please enter a number!')
+                        return false;
                     }
                     return true;
                 }
@@ -190,8 +210,12 @@ internPrompt = () => {
                 name: 'email',
                 message: "Please enter the intern's email address (Required)",
                 validate: function(input) {
+                    let re = /\S+@\S+\.\S+/;
                     if (!input) {
                         console.log('Please enter an email address!');
+                        return false;
+                    } else if (!re.test(input)) {
+                        console.log(' Please enter a valid email address!');
                         return false;
                     }
                     return true;
