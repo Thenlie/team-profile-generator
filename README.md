@@ -17,13 +17,14 @@
 
   ## Installation
 
-  Run the command npm i to download the required packages.
+  Clone the repo from GitHub on to your machine. Then simply run the command `npm install` to download all of the dependencies. Now you are all set!
 
   ## Usage
 
-  None
+  Run the command `node index` to start the program. You will be prompted with a series of questions about your team members. Fill them out and once you are done select "Finish Building Team". This will then generate an HTML page with cards featuring each employee. 
 
-  
+  ![Program Walkthrough GIF](https://github.com/Thenlie/team-profile-generator/blob/main/assets/videos/video-walkthrough2.gif)  
+
   ## License
   
   
@@ -54,11 +55,17 @@
 
   ## Contributing
 
-  None
+  Feel free to clone or fork this repo and make it your own. 
 
   ## Tests
 
-  None
+  There are four tests created for each of the following classes:
+  * General Employee
+  * Manager
+  * Engineer
+  * Intern
+  
+  These tests ensure the proper data is passed through these classes. This was my first time doing and test driven development and my first time using Jest.
   
   ## Questions
 
