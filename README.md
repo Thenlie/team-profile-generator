@@ -23,7 +23,7 @@
 
   Run the command `node index` to start the program. You will be prompted with a series of questions about your team members. Fill them out and once you are done select "Finish Building Team". This will then generate an HTML page with cards featuring each employee. 
 
-  ![Program Walkthrough GIF](https://github.com/Thenlie/team-profile-generator/blob/main/assets/video-walkthrough2.gif)  
+  ![Program Walkthrough GIF](https://github.com/Thenlie/team-profile-generator/blob/main/assets/video-walkthrough.gif)  
 
   ## License
   
