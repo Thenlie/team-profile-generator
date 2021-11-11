@@ -1,34 +1,13 @@
 //card for each employee
 generateCard = employee => {
+    let lastItem = ''
     if (employee.constructor.name === 'Manager'){
-        return `
-        <section class='card'>
-            <div class='card-header'>
-            <h2 class='name'>${employee.name}</h2>
-            <h2 class='title'><i class="bi bi-clipboard-check"></i> ${employee.getRole()}</h2>
-            </div>
-            <ul class='list-group list-group-flush'>
-            <li class='id list-group-item'>Employee ID: ${employee.id}</li>
-            <li class='email list-group-item'>Email <a href="mailto:${employee.email}">${employee.email}</a></li>
-            <li class='info list-group-item'>Office Number: ${employee.officeNumber}</li>
-            </ul>
-        </section>
-        `
+        lastItem = 'Office Number: ' + employee.officeNumber;
     } else if (employee.constructor.name === 'Engineer'){
-        return `
-        <section class='card'>
-            <div class='card-header'>
-            <h2 class='name'>${employee.name}</h2>
-            <h2 class='title'><i class="bi bi-wrench"></i> ${employee.getRole()}</h2>
-            </div>
-            <ul class='list-group list-group-flush'>
-            <li class='id list-group-item'>Employee ID: ${employee.id}</li>
-            <li class='email list-group-item'>Email <a href="mailto:${employee.email}">${employee.email}</a></li>
-            <li class='info list-group-item'>GitHub: <a href="${employee.getGithub()}"> ${employee.github} </a></li>
-            </ul>
-        </section>
-        `
+        lastItem = 'GitHub: ' + `<a href="${employee.getGithub()}"> ${employee.github} </a>`;
     } else if (employee.constructor.name === 'Intern'){
+        lastItem = 'School: ' + employee.school;
+    }
         return `
         <section class='card'>
             <div class='card-header'>
@@ -37,12 +16,12 @@ generateCard = employee => {
             </div>
             <ul class='list-group list-group-flush'>
             <li class='id list-group-item'>Employee ID: ${employee.id}</li>
-            <li class='email list-group-item'>Email <a href="mailto:${employee.email}">${employee.email}</a></li>
-            <li class='info list-group-item'>School: ${employee.getSchool()}</li>
+            <li class='email list-group-item'>Email: <a href="mailto:${employee.email}">${employee.email}</a></li>
+            <li class='info list-group-item'>` + lastItem + `</li>
             </ul>
         </section>
         `
-    }
+    
 }
 
 //entire HTML export

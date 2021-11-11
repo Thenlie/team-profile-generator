@@ -3,8 +3,8 @@ const Employee = require('../lib/Employee');
 test('create employee object', () => {
     const employee = new Employee('John', 1, 'john@fakemail.com');
     expect(employee.name).toBe('John');
-    expect(employee.id).toEqual(expect.any(Number));
-    expect(employee.email).toEqual(expect.any(String));
+    expect(employee.id).toBe(1);
+    expect(employee.email).toBe('john@fakemail.com');
 })
 
 test('get the employee name', () => {
