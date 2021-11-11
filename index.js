@@ -17,43 +17,43 @@ managerPrompt = () => {
                 message: "Please enter the team manager's name (Required)",
                 validate: function(input) {
                     if (!input) {
-                        console.log('Please enter a name!')
-                        return false
+                        console.log('Please enter a name!');
+                        return false;
                     }
-                    return true
+                    return true;
                 }
             }, {
                 type: 'input',
                 name: 'id',
-                message: "Please enter the team manager's employee ID number",
+                message: "Please enter the team manager's employee ID number (Required)",
                 validate: function(input) {
                     if (!input) {
-                        console.log('Please enter an ID number!')
-                        return false
+                        console.log('Please enter an ID number!');
+                        return false;
                     }
-                    return true
+                    return true;
                 }
             }, {
                 type: 'input',
                 name: 'email',
-                message: "Please enter the team manager's email address",
+                message: "Please enter the team manager's email address (Required)",
                 validate: function(input) {
                     if (!input) {
-                        console.log('Please enter an email address!')
-                        return false
+                        console.log('Please enter an email address!');
+                        return false;
                     }
-                    return true
+                    return true;
                 }
             }, {
                 type: 'input',
                 name: 'officeNum',
-                message: "Please enter the team manager's office number",
+                message: "Please enter the team manager's office number (Required)",
                 validate: function(input) {
                     if (!input) {
-                        console.log('Please enter an office number!')
-                        return false
+                        console.log('Please enter an office number!');
+                        return false;
                     }
-                    return true
+                    return true;
                 }
             }
         ])
@@ -104,46 +104,46 @@ engineerPrompt = () => {
             {
                 type: 'input',
                 name: 'name',
-                message: "Please enter the engineer's name",
+                message: "Please enter the engineer's name (Required)",
                 validate: function(input) {
                     if (!input) {
-                        console.log('Please enter a name!')
-                        return false
+                        console.log('Please enter a name!');
+                        return false;
                     }
-                    return true
+                    return true;
                 }
             }, {
                 type: 'input',
                 name: 'id',
-                message: "Please enter the engineer's employee ID number",
+                message: "Please enter the engineer's employee ID number (Required)",
                 validate: function(input) {
                     if (!input) {
-                        console.log('Please enter an ID number!')
-                        return false
+                        console.log('Please enter an ID number!');
+                        return false;
                     }
-                    return true
+                    return true;
                 }
             }, {
                 type: 'input',
                 name: 'email',
-                message: "Please enter the engineer's email address",
+                message: "Please enter the engineer's email address (Required)",
                 validate: function(input) {
                     if (!input) {
-                        console.log('Please enter an email address!')
-                        return false
+                        console.log('Please enter an email address!');
+                        return false;
                     }
-                    return true
+                    return true;
                 }
             }, {
                 type: 'input',
                 name: 'github',
-                message: "Please enter the engineer's GitHub username",
+                message: "Please enter the engineer's GitHub username (Required)",
                 validate: function(input) {
                     if (!input) {
-                        console.log('Please enter a GitHub username!')
-                        return false
+                        console.log('Please enter a GitHub username!');
+                        return false;
                     }
-                    return true
+                    return true;
                 }
             }
         ])
@@ -166,46 +166,46 @@ internPrompt = () => {
             {
                 type: 'input',
                 name: 'name',
-                message: "Please enter the intern's name",
+                message: "Please enter the intern's name (Required)",
                 validate: function(input) {
                     if (!input) {
-                        console.log('Please enter a name!')
-                        return false
+                        console.log('Please enter a name!');
+                        return false;
                     }
-                    return true
+                    return true;
                 }
             }, {
                 type: 'input',
                 name: 'id',
-                message: "Please enter the intern's employee ID number",
+                message: "Please enter the intern's employee ID number (Required)",
                 validate: function(input) {
                     if (!input) {
-                        console.log('Please enter an ID number!')
-                        return false
+                        console.log('Please enter an ID number!');
+                        return false;
                     }
-                    return true
+                    return true;
                 }
             }, {
                 type: 'input',
                 name: 'email',
-                message: "Please enter the intern's email address",
+                message: "Please enter the intern's email address (Required)",
                 validate: function(input) {
                     if (!input) {
-                        console.log('Please enter an email address!')
-                        return false
+                        console.log('Please enter an email address!');
+                        return false;
                     }
-                    return true
+                    return true;
                 }
             }, {
                 type: 'input',
                 name: 'school',
-                message: "Please enter the intern's school name",
+                message: "Please enter the intern's school name (Required)",
                 validate: function(input) {
                     if (!input) {
-                        console.log('Please enter a school name!')
-                        return false
+                        console.log('Please enter a school name!');
+                        return false;
                     }
-                    return true
+                    return true;
                 }
             }
         ])
