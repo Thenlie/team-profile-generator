@@ -1,12 +1,32 @@
+header {
+    background-color: rgba(255, 0, 0, 0.5);
+    text-align: center;
+    height: 100px;
+}
+
+header h1 {
+    padding: 20px;
+}
+
 main {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
 }
 
 .card {
-    border: 2px solid black;
+    border: 1px solid black;
     border-radius: 7px;
-    width: 200px;
+    box-shadow: 5px 5px 10px;
     margin: 10px 15px;
-    padding: 10px 15px;
     text-align: center;
+}
+
+.card-header {
+    background-color: rgba(0, 119, 255, 0.7)
+}
+
+.card ul {
+    margin: 5px;
 }
