@@ -8,6 +8,10 @@ header h1 {
     padding: 20px;
 }
 
+body {
+    background-color: rgba(120, 120, 120, 0.1);
+}
+
 main {
     display: flex;
     flex-wrap: wrap;
